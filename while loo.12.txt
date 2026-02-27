@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int N,i=0;
+    int usage;
+    int max=0;
+    int surge_hours=0;
+    scanf("%d",&N);
+    while(i<N)
+    {
+        scanf("%d",&usage);
+        if(usage>max)
+        {
+           max=usage;
+        }
+        if(usage>5)
+        {
+            surge_hours++;
+        }
+        i++;
+    }
+
+    printf("Max usage:%d\n",max);
+    printf("Surge hours:%d",surge_hours);
+
+    return 0;
+}
