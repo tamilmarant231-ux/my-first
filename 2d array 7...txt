@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int R, C;
+    scanf("%d %d", &R, &C);
+    int matrix[R][C];
+    for(int i = 0; i < R; i++)
+        for(int j = 0; j < C; j++)
+            scanf("%d", &matrix[i][j]);
+    int count = 0;
+    for(int i = 0; i < R; i++) {
+        for(int j = 0; j < C; j++) {
+            int elem = matrix[i][j];
+            int rowMin = 1, colMax = 1;
+            for(int k = 0; k < C; k++)
+                if(matrix[i][k] < elem)
+                    rowMin = 0;
+            for(int k = 0; k < R; k++)
+                if(matrix[k][j] > elem)
+                    colMax = 0;
+            if(rowMin && colMax)
+                count++;
+        }
+    }
+    printf("%d\n", count);
+    return 0;
+}
