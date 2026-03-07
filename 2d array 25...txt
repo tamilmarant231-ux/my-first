@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main(){
+    int a,b;
+    scanf("%d %d",&a,&b);
+    int count=0;
+    for (int i=0;i<a;i++)
+    {
+        int num,max,min;
+        scanf("%d",&num);
+        max=min=num; 
+        for (int j=1;j<b;j++)
+        {
+            scanf("%d",&num);
+            if (num>max)max=num;
+            if (num<min)min=num;
+        }
+        if (max-min<=1000)
+            count++;
+    }
+    printf("%d\n",count);
+    return 0;
+}
